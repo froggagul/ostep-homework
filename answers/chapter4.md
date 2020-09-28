@@ -4,6 +4,7 @@
 ## 1.
 ### 질문
 > Run process-run.py with the following flags: -l 5:100,5:100. What should the CPU utilization be (e.g., the percent of time the CPU is in use?) Why do you know this? Use the -c and -p flags to see if you were right.
+
 > process-run.py를 다음 flag와 함께 돌리세요 `-l 5:100,5:100`. [CPU 사용률](https://ko.wikipedia.org/wiki/CPU_%ED%83%80%EC%9E%84)은 어떻게 될 것인가요? (예: 전체 시간중 CPU를 사용하는 시간의 비율) 그리고 그것의 근거는 무엇인가요? -c, -p flag를 사용해 맞는지 확인해 보세요
 ### 답안
 * 우리가 선언한 process-list는 "5:100, 5:100"이다. 이는 process가 각각 5개의 명령어로 구성되어 있으며, CPU 명령어일 가능성은 100%이다.
@@ -54,6 +55,7 @@ Stats: IO Busy  0 (0.00%)
 ## 3.
 ### 문제
 > Switch the order of the processes: -l 1:0,4:100. What happens now? Does switching the order matter? Why? (As always, use -c and -p to see if you were right)
+
 > 프로세스의 순서를 `-l 1:0,4:100`로 바꿔보세요. 무슨일이 일어나나요? 이 순서를 바꾸는 것이 중요한가요? 왜 그런가요? (언제나 그렇듯이, `-c`, `-p`를 사용하여 답을 확인하세요)
 
 ### 답안
@@ -107,6 +109,7 @@ Stats: IO Busy  4 (40.00%)
 ## 5.
 ### 문제
 > Now, run the same processes, but with the switching behavior set to switch to another process whenever one is WAITING for I/O (-l 1:0,4:100 -c -S SWITCH_ON_IO). What happens now? Use -c and -p to confirm that you are right.
+
 > 이제, 같은 프로세스들을 실행한다. 이때 프로세스의 switch 시점을 프로세스가 끝나는 때가 아닌, IO가 끝나는 시점으로 바꾼다. (`-l 1:0,4:100 -c -S SWITCH_ON_IO` 를 입력하면 된다.) `-c`와 `-p` flag로 맞는지 확인해라
 ### 답안
 먼저 프로세스의 switch 시점을 선행하는 프로세스가 끝나는 때로 설정하면 문제의 경우는 비효율적이다. IO 명령어 하나로 이루어진 프로세스가 먼저 실행되기 때문에 IO를 수행할때도 cpu는 사용되지 못할 것이다. 반면, IO가 수행될때 다른 프로세스를 실행할 수 있다면, cpu 사용률을 높일 수 있을 것이다. 실행 결과는 다음과 같다.
