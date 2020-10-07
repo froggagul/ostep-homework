@@ -151,7 +151,7 @@ int main (int argc, char *argv[]) {
   return 0;
 }
 ```
-```
+```bash
 froggagul@ubuntu:~/ostep/answers$ ./simple 1
 1threads with 100000 loops took 0.028860 seconds
 
