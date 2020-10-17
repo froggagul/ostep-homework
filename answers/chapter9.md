@@ -1,4 +1,4 @@
-# Chapter 8. Scheduling: Proportional Share
+# Chapter 9. Scheduling: Proportional Share
 사용 코드는 다음과 같다
 * cpu-sched-lottery/lottery.py
 ## 1.
